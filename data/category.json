@@ -1,0 +1,50 @@
+{
+    "Announcement": {
+        "Event": {
+            "status": "forum_new",
+            "topics": 296,
+            "posts": 6078,
+            "lastpost": "Latest post from Admin, on Today at 12:17 am"
+        },
+        "Update": {
+            "status": "forum_no_new",
+            "topics": 270,
+            "posts": 348,
+            "lastpost": "Latest post from Ange Tuteur, on July 10th 2015, 5:03 pm"
+        }
+    },
+    "Relax": {
+        "Video": {
+            "status": "cat_new",
+            "topics": 879,
+            "posts": 8207,
+            "lastpost": "Latest post from Zzbaivong, on Today at 2:56 pm"            
+        },
+        "Music": {
+            "status": "cat_no_new",
+            "topics": 2609,
+            "posts": 23876,
+            "lastpost": "Latest post from JScript, on Today at 4:38 pm"            
+        },
+        "Game": {
+            "status": "forum_new",
+            "topics": 2441,
+            "posts": 17167,
+            "lastpost": "Latest post from SLGray, on Today at 12:17 am"
+        },
+        "16+": {
+            "status": "cat_locked",
+            "topics": 0,
+            "posts": 0,
+            "lastpost": ""
+        }
+    },
+    "Miscellaneous": {
+        "Garbage": {
+            "status": "forum_locked",
+            "topics": 182,
+            "posts": 355,
+            "lastpost": "Latest post from Luffy, on July 23rd 2015, 12:33 am"
+        }
+    }
+}
