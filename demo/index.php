@@ -30,7 +30,7 @@ $header = tempHeader('JQUERY_PATH', 'http://ajax.googleapis.com/ajax/libs/jquery
 $header = tempHeader('JS_DIR', 'http://illiweb.com/rsc/14/frm/lang/');
 $header = tempHeader('L_LANG', $lang);
 $header = blockHeader('google_analytics_code', '<!-- Google Analytics -->');
-$header = tempHeader('HOSTING_JS', '<script src="../99123.js" type="text/javascript"></script>' . "\n" .
+$header = tempHeader('HOSTING_JS', '<script src="99123.js" type="text/javascript"></script>' . "\n" .
 "\t" . '<script type="text/javascript" src="http://illiweb.com/rsc/14/frm/mobile/navigationBar/mobileNavbar.js"></script>' . "\n" .
 "\t" . '<script type="text/javascript">' . "\n" .
 "\t" . '//<![CDATA[' . "\n" .
@@ -77,52 +77,57 @@ echo $header;
 // INDEX_BOX
 $index_box = file_get_contents('../templates/' . $path . '/index_box.php');
 
-$obj = json_decode(file_get_contents('../data/category.json'));
-$val;
+$categoriesObj = json_decode(file_get_contents('../data/categories.json'));
+$forumsObj = json_decode(file_get_contents('../data/forums.json'));
+$forumsArr;
 
-$index_box = preg_replace_callback('/<\!\-\-\sBEGIN\scatrow\s\-\->([\s\S]+)<\!\-\-\sEND\scatrow\s\-\->/', function($arg) {
+$index_box = preg_replace_callback('/<\!\-\-\sBEGIN\scatrow\s\-\->([\s\S]+)<\!\-\-\sEND\scatrow\s\-\->/', function($arg) {    
     
-    global $obj;
+    global $categoriesObj;
+    global $forumsArr;
     $catrow = $arg[1];
     $txt = '';
     
-    foreach ($obj as $key => $value) {
+    foreach ($categoriesObj as $key => $value) {        
         
-        global $val;
-        $val = $value;
+        $forumsArr = $value->{'forums'};
         
-        $row = str_replace('{catrow.tablehead.L_FORUM}', $key, $catrow);
+        $row = str_replace('{catrow.tablehead.L_FORUM}', $value->{'name'}, $catrow);
         
         $row = preg_replace_callback('/<\!\-\-\sBEGIN\sforumrow\s\-\->([\s\S]+)<\!\-\-\sEND\sforumrow\s\-\->/', function($ar) {
             
-            global $val;            
+            global $forumsObj;
+            global $forumsArr;
             $frow = $ar[1];
             $forum = '';
             
-            foreach ($val as $k => $v) { 
+            foreach ($forumsArr as $k) {
                 
-                $item = str_replace('{catrow.forumrow.U_VIEWFORUM}', 'category.php', $frow);
+                $v = $forumsObj->$k;
+                
+                $item = str_replace('{catrow.forumrow.U_VIEWFORUM}', 'viewforum.php?selected_id=' . $k, $frow);
                 $item = str_replace('{catrow.forumrow.L_FORUM_FOLDER_ALT}', $v->{'status'}, $item);
                 $item = str_replace('{catrow.forumrow.FOLDER_CLASSNAME}', $v->{'status'}, $item);
                 $item = str_replace('{catrow.forumrow.LEVEL}', '3', $item);
-                $item = str_replace('{catrow.forumrow.FORUM_NAME}', $k, $item);
+                $item = str_replace('{catrow.forumrow.FORUM_NAME}', $v->{'name'}, $item);
                 $item = str_replace('{catrow.forumrow.POSTS}', $v->{'posts'}, $item);
                 $item = str_replace('{L_POSTS}', 'Posts', $item);
                 $item = str_replace('{L_IN}', '  ', $item);
                 $item = str_replace('{catrow.forumrow.TOPICS}', $v->{'topics'}, $item);
                 $item = str_replace('{L_TOPICS}', 'Topics', $item);
                 $item = str_replace('{catrow.forumrow.L_LATEST_POST_FROM_THE}', $v->{'lastpost'}, $item);
-                $item = str_replace('{catrow.forumrow.U_VIEWFORUM}', 'category.php', $item);
                 $forum .= $item;
             }
             
             return $forum;
+            
         }, $row);
         
         $txt .= $row;
     }
     
     return $txt;
+    
 }, $index_box);
 
 echo $index_box;

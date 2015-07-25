@@ -1,0 +1,14 @@
+{
+    "c1": {
+        "name": "Announcement",
+        "forums": ["f1", "f2"]
+    },
+    "c2": {
+        "name": "Relax",
+        "forums": ["f3", "f4", "f5", "f6"]
+    },
+    "c3": {
+        "name": "Miscellaneous",
+        "forums": ["f7"]
+    }
+}

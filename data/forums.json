@@ -1,0 +1,61 @@
+{
+    "f1": {
+        "name": "Event",
+        "category": "c1",
+        "status": "forum_new",
+        "topics": 296,
+        "posts": 6078,
+        "lastpost": "Latest post from Admin, on Today at 12:17 am"
+    },
+    "f2": {
+        "name": "Update",
+        "category": "c1",
+        "status": "forum_no_new",
+        "topics": 270,
+        "posts": 348,
+        "lastpost": "Latest post from Ange Tuteur, on July 10th 2015, 5:03 pm"
+    },
+
+    "f3": {
+        "name": "Video",
+        "category": "c2",
+        "status": "cat_new",
+        "topics": 879,
+        "posts": 8207,
+        "lastpost": "Latest post from Zzbaivong, on Today at 2:56 pm"
+    },
+    "f4": {
+        "name": "Music",
+        "category": "c2",
+        "status": "cat_no_new",
+        "topics": 2609,
+        "posts": 23876,
+        "lastpost": "Latest post from JScript, on Today at 4:38 pm"
+    },
+    "f5": {
+        "name": "Game",
+        "category": "c2",
+        "status": "forum_new",
+        "topics": 2441,
+        "posts": 17167,
+        "lastpost": "Latest post from SLGray, on Today at 12:17 am"
+    },
+    "f6": {
+        "name": "Secret",
+        "category": "c2",
+        "status": "cat_locked",
+        "topics": 0,
+        "posts": 0,
+        "lastpost": "",
+        "url": "viewforum?selected_id=f6"
+    },
+
+    "f7": {
+        "name": "Garbage",
+        "category": "c3",
+        "status": "forum_locked",
+        "topics": 182,
+        "posts": 355,
+        "lastpost": "Latest post from Luffy, on July 23rd 2015, 12:33 am"
+    }
+}
