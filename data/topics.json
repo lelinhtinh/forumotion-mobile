@@ -1,8 +1,108 @@
 {
     "t1": {
-        "author": "",
-        "date": "",
-        "edittime": 0,
-        "poll": ""
+        "name": "BBcode image - link",
+        "status": "folder_global",
+        "views": 125,
+        "replies": 45,
+        "lastpost": "Latest post from Admin, on Today at 12:17 am",
+        "posts": ["p8", "p1", "p2", "p3", "p4", "p5", "p6", "p7"],
+        "poll": true
+    },
+    "t2": {
+        "name": "BBcode Multi quote",
+        "status": "folder_global_new",
+        "views": 1583,
+        "replies": 114,
+        "lastpost": "Latest post from Ange Tuteur, on July 10th 2015, 5:03 pm",
+        "posts": ["p9", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
+    },
+    "t3": {
+        "name": "BBcode Multi spoiler",
+        "status": "folder_announce",
+        "views": 14,
+        "replies": 3,
+        "lastpost": "Latest post from Zzbaivong, on Today at 2:56 pm",
+        "posts": ["p10", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
+    },
+    "t4": {
+        "name": "BBcode table - hidden",
+        "status": "folder_announce_new",
+        "views": 1445,
+        "replies": 698,
+        "lastpost": "Latest post from JScript, on Today at 4:38 pm",
+        "posts": ["p11", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
+    },
+    "t5": {
+        "name": "BBcode code",
+        "status": "folder_sticky",
+        "views": 554,
+        "replies": 36,
+        "lastpost": "Latest post from SLGray, on Today at 12:17 am",
+        "posts": ["p12", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
+    },
+    "t6": {
+        "name": "BBcode list",
+        "status": "folder_sticky_new",
+        "views": 4581,
+        "replies": 14,
+        "lastpost": "Latest post from Luffy, on July 23rd 2015, 12:33 am",
+        "posts": ["p13", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
+    },
+    "t7": {
+        "name": "BBcode inline - htag",
+        "status": "folder_locked",
+        "views": 751,
+        "replies": 0,
+        "lastpost": "Latest post from APE, on July 22nd 2015, 7:57 pm",
+        "posts": ["p14", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
+    },
+    "t8": {
+        "name": "BBcode video flash",
+        "status": "folder_locked_new",
+        "views": 9962,
+        "replies": 124,
+        "lastpost": "Latest post from Ange Tuteur, on July 16th 2015, 3:22 pm",
+        "posts": ["p15", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
+    },
+    "t9": {
+        "name": "Tell us your preferred text editor",
+        "status": "folder_hot",
+        "views": 7858,
+        "replies": 1215,
+        "lastpost": "Latest post from Black-Shadow, on Today at 11:38 am",
+        "posts": ["p16", "p1", "p2", "p3", "p4", "p5", "p6", "p7"],
+        "poll": true
+    },
+    "t10": {
+        "name": "World and International News",
+        "status": "folder_hot_new",
+        "views": 5845,
+        "replies": 1113,
+        "lastpost": "Latest post from Admin, on Today at 12:17 am",
+        "posts": ["p17", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
+    },
+    "t11": {
+        "name": "Most Popular News Stories",
+        "status": "folder_new",
+        "views": 14,
+        "replies": 2,
+        "lastpost": "Latest post from markai30, on Today at 2:25 am",
+        "posts": ["p18", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
+    },
+    "t12": {
+        "name": "News Main Celebrity News",
+        "status": "folder_no_new",
+        "views": 436,
+        "replies": 13,
+        "lastpost": "Latest post from miamor, on Today at 9:32 pm",
+        "posts": ["p19", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
+    },
+    "t13": {
+        "name": "Happy birthday!",
+        "status": "folder_birthday",
+        "views": 657,
+        "replies": 96,
+        "lastpost": "Latest post from KirigayaKazuto, on Today at 10:05 pm",
+        "posts": ["p20", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
     }
 }

@@ -1,0 +1,29 @@
+{
+    "q": "What's your preferred text editor?",
+    "a": [{
+        "title": "Sublime Text",
+        "percent": "32.52%",
+        "votes": 5298
+    }, {
+        "title": "Notepad++",
+        "percent": "39.43%",
+        "votes": 6424
+    }, {
+        "title": "Sublime Text",
+        "percent": "32.52%",
+        "votes": 5298
+    }, {
+        "title": "Vim",
+        "percent": "19.34%",
+        "votes": 3151
+    }, {
+        "title": "Atom",
+        "percent": "2.04%",
+        "votes": 332
+    }, {
+        "title": "Emacs",
+        "percent": "7%",
+        "votes": 1089
+    }],
+    "total": 16294
+}
