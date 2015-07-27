@@ -1,8 +1,8 @@
 Options +FollowSymlinks
 RewriteEngine on
 
-ErrorDocument 404 /forumotion-mobile/demo/missing.php
-ErrorDocument 403 /forumotion-mobile/demo/missing.php
+ErrorDocument 404 /forumotion-mobile/translate/missing.php
+ErrorDocument 403 /forumotion-mobile/translate/missing.php
 
 Options All -Indexes
 

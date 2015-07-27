@@ -9,8 +9,8 @@ include 'inc/header.php';
 // INDEX_BOX
 $index_box = file_get_contents('../templates/' . $path . '/index_box.php');
 
-$categoriesObj = json_decode(file_get_contents('../data/categories.json'));
-$forumsObj = json_decode(file_get_contents('../data/forums.json'));
+$categoriesObj = json_decode(file_get_contents('data/categories.json'));
+$forumsObj = json_decode(file_get_contents('data/forums.json'));
 $forumsArr;
 
 $index_box = preg_replace_callback('/<\!\-\-\sBEGIN\scatrow\s\-\->([\s\S]+)<\!\-\-\sEND\scatrow\s\-\->/', function ($arg) {

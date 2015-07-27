@@ -3,11 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<meta http-equiv="refresh" content="5; URL=<?php echo $indexurl;?>" />
+<meta http-equiv="refresh" content="5; URL=<?php echo $indexurl . 'translate';?>" />
 <meta name="robots" content="noindex,nofollow" />
 <title>Free</title>
 </head>
 <body>
-	<?php echo '<a href="' . $indexurl . '">You can return to the index...</a>';?>
+	<?php echo '<a href="' . $indexurl . 'translate">You can return to the index...</a>';?>
 </body>
 </html>

@@ -4,8 +4,8 @@ require_once '../config.php';
 require_once '../functions.php';
 
 $index_box = file_get_contents('../templates/' . $path . '/index_box.php');
-$categoriesObj = json_decode(file_get_contents('../data/categories.json'));
-$forumsObj = json_decode(file_get_contents('../data/forums.json'));
+$categoriesObj = json_decode(file_get_contents('data/categories.json'));
+$forumsObj = json_decode(file_get_contents('data/forums.json'));
 
 $selected_id = isset($_GET['selected_id']) ? $_GET['selected_id'] : '';
 $has_forum;
@@ -14,15 +14,27 @@ if (preg_match('/^f(1|2|3|4|5|6|7|8|9|10|11)$/', $selected_id)) {
 	$navtitle = $page_title;
 	$category = $forumsObj->$selected_id->{'category'};
 	if (preg_match('/^f\d+$/', $category)) {
-		$backlink = 'viewforum.php?selected_id=' . $category;
+		if ($robot) {
+			$backlink = $category . '-forum.html';
+		} else {
+			$backlink = 'viewforum.php?selected_id=' . $category;
+		}
 	} else {
-		$backlink = $indexurl;
+		if ($robot) {
+			$backlink = $indexurl . 'preview';
+		} else {
+			$backlink = $indexurl . 'translate';
+		}
 	}
 	$has_forum = true;
-} else if(preg_match('/^c(1|2|3)$/', $selected_id)) {
+} else if (preg_match('/^c(1|2|3)$/', $selected_id)) {
 	$page_title = $categoriesObj->$selected_id->{'name'};
 	$navtitle = $page_title;
-	$backlink = $indexurl;
+	if ($robot) {
+		$backlink = $indexurl . 'preview';
+	} else {
+		$backlink = $indexurl . 'translate';
+	}
 	$has_forum = true;
 } else {
 	$page_title = 'Information';
@@ -36,7 +48,7 @@ if ($has_forum) {
 	$viewforum = file_get_contents('../templates/' . $path . '/viewforum_body.php');
 	$dataObj = $categoriesObj;
 	$dataSub = 'forums';
-	if(preg_match('/^f\d+$/', $selected_id)) {
+	if (preg_match('/^f\d+$/', $selected_id)) {
 		$dataObj = $forumsObj;
 		$dataSub = 'subforums';
 	}
@@ -55,7 +67,7 @@ if ($has_forum) {
 	} else {
 		$viewforum = str_replace('{BOARD_INDEX}', '', $viewforum);
 	}
-	if(preg_match('/^f\d+$/', $selected_id)) {
+	if (preg_match('/^f\d+$/', $selected_id)) {
 		$viewforum = str_replace('{TOPICS_LIST_BOX}', topics_list(), $viewforum);
 	} else {
 		$viewforum = str_replace('{TOPICS_LIST_BOX}', '', $viewforum);

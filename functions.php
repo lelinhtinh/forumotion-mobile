@@ -12,14 +12,18 @@ function cat_status($val) {
 
 function category($forumrow, $forumsArr) {
 
-	global $forumsObj;
+	global $forumsObj, $robot;
 	$forum = '';
 
 	foreach ($forumsArr as $k) {
 
 		$v = $forumsObj->$k;
 
-		$item = str_replace('{catrow.forumrow.U_VIEWFORUM}', 'viewforum.php?selected_id=' . $k, $forumrow);
+		if($robot) {
+			$item = str_replace('{catrow.forumrow.U_VIEWFORUM}', $k . '-forum.html', $forumrow);
+		} else {
+			$item = str_replace('{catrow.forumrow.U_VIEWFORUM}', 'viewforum.php?selected_id=' . $k, $forumrow);
+		}
 		$item = str_replace('{catrow.forumrow.L_FORUM_FOLDER_ALT}', cat_status($v->{'status'}), $item);
 		$item = str_replace('{catrow.forumrow.FOLDER_CLASSNAME}', $v->{'status'}, $item);
 		$item = str_replace('{catrow.forumrow.LEVEL}', '3', $item);
@@ -74,8 +78,8 @@ function topics_list() {
 		$topics_list = preg_replace('/<\!\-\-\sBEGIN\sno_topics\s\-\->([\s\S]+)<\!\-\-\sEND\sno_topics\s\-\->/', '<!-- No topic -->', $topics_list);
 
 		$topics_list = preg_replace_callback('/<\!\-\-\sBEGIN\srow\s\-\->([\s\S]+)<\!\-\-\sEND\srow\s\-\->/', function ($arg) {
-
-			$topicsObj = json_decode(file_get_contents('../data/topics.json'));
+			global $robot;
+			$topicsObj = json_decode(file_get_contents('../translate/data/topics.json'));
 
 			$topicrow = $arg[1];
 			$txt = '';
@@ -98,7 +102,11 @@ function topics_list() {
 
 				$row = str_replace('{topics_list_box.row.L_TITLE}', 'Announcement & Sticky', $row);
 				$row = str_replace('{topics_list_box.row.topic.table_sticky.L_TITLE}', 'Topics', $row);
-				$row = str_replace('{topics_list_box.row.U_VIEW_TOPIC}', 'viewtopic.php', $row);
+				if($robot) {
+					$row = str_replace('{topics_list_box.row.U_VIEW_TOPIC}', $key . '-topic.html', $row);
+				} else {
+					$row = str_replace('{topics_list_box.row.U_VIEW_TOPIC}', 'viewtopic.php?t=' . substr($key, 1), $row);
+				}
 				$row = str_replace('{topicrow.TOPIC_FOLDER_IMG_ALT}', $status, $row);
 				$row = str_replace('{topics_list_box.row.FOLDER_CLASSNAME}', $status, $row);
 				$row = str_replace('{topics_list_box.row.TOPIC_TYPE}', $topic_type, $row);

@@ -31,7 +31,13 @@ $header = tempHeader('JQUERY_PATH', 'http://ajax.googleapis.com/ajax/libs/jquery
 $header = tempHeader('JS_DIR', 'http://illiweb.com/rsc/14/frm/lang/');
 $header = tempHeader('L_LANG', $lang);
 $header = blockHeader('google_analytics_code', '<!-- Google Analytics -->');
-$header = tempHeader('HOSTING_JS', '<script src="99123.js" type="text/javascript"></script>' . "\n" .
+$ads_css = '';
+$ads_html = '';
+if($showads) {
+	$ads_css = "\t" . '#mpage-body .23fd505, #mpage-body .d4e2892e  {background: none #C4C4C6;}#mpage-body .d4e2892e .banniere {width:320px;/*height:50px;*/background: none #C4C4C6;margin:0 auto;}#mpage-body .23fd505 iframe, #mpage-body .d4e2892e iframe{display: block important!;visibility: visible important!}div#mpage-body iframe[src*=adstune]:not([style*=display]), div#mpage-body iframe[src*=criteo]:not([style*=display]), div#mpage-body iframe[src*=ad6b]:not([style*=display]), div#mpage-body iframe[src*=z5x]:not([style*=display]), div#mpage-body iframe[src*=doubleclick]:not([style*=display]) {display: block !important;visibility: visible !important;}' . "\n";
+	$ads_html = '<!-- BEGIN Ads --><div><div class="d4e2892e"><div class="banniere"><div id="global_ad_id1"><div id="m_dcontentglobal_ad_id1" style="display: block;"><img width="320" height="50" style="border-style: none" src="' . $indexurl . 'assets/ads.jpg"></div></div></div><div class="clear"></div></div><div style="clear:both;"></div></div><!-- END Ads -->' . "\n";
+}
+$header = tempHeader('HOSTING_JS', '<script src="' . $indexurl . 'assets/99123.js" type="text/javascript"></script>' . "\n" .
 	"\t" . '<script type="text/javascript" src="http://illiweb.com/rsc/14/frm/mobile/navigationBar/mobileNavbar.js"></script>' . "\n" .
 	"\t" . '<script type="text/javascript">' . "\n" .
 	"\t" . '//<![CDATA[' . "\n" .
@@ -65,11 +71,11 @@ $header = tempHeader('HOSTING_JS', '<script src="99123.js" type="text/javascript
 	"\t" . '</script>' . "\n" .
 	"\t" . '<!-- BEGIN Ads -->' . "\n" .
 	"\t" . '<style type="text/css">' . "\n" .
-	"\t" . '#mpage-body .23fd505, #mpage-body .d4e2892e  {background: none #C4C4C6;}#mpage-body .d4e2892e .banniere {width:320px;/*height:50px;*/background: none #C4C4C6;margin:0 auto;}#mpage-body .23fd505 iframe, #mpage-body .d4e2892e iframe{display: block important!;visibility: visible important!}div#mpage-body iframe[src*=adstune]:not([style*=display]), div#mpage-body iframe[src*=criteo]:not([style*=display]), div#mpage-body iframe[src*=ad6b]:not([style*=display]), div#mpage-body iframe[src*=z5x]:not([style*=display]), div#mpage-body iframe[src*=doubleclick]:not([style*=display]) {display: block !important;visibility: visible !important;}' . "\n" .
+	$ads_css .
 	"\t" . '</style>' . "\n" .
 	"\t" . '<!-- END Ads -->');
 $header = tempHeader('NAV_CAT_DESC', $back . '<h1 class="mobile_title_content">' . $navtitle . '</h1>');
-$header = blockHeader('html_validation', '<!-- HTML Validation header -->' . "\n" . '<!-- BEGIN Ads --><div><div class="d4e2892e"><div class="banniere"><div id="global_ad_id1"><div id="m_dcontentglobal_ad_id1" style="display: block;"><img width="320" height="50" style="border-style: none" src="ads.jpg"></div></div></div><div class="clear"></div></div><div style="clear:both;"></div></div><!-- END Ads -->' . "\n");
+$header = blockHeader('html_validation', '<!-- HTML Validation header -->' . "\n" . $ads_html);
 
 echo $header;
 
