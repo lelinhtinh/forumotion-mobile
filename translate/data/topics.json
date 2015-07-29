@@ -65,7 +65,7 @@
         "posts": ["p15", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
     },
     "t9": {
-        "name": "Tell us your preferred text editor",
+        "name": "Five Best Text Editors",
         "status": "folder_hot",
         "views": 7858,
         "replies": 1215,
@@ -74,7 +74,7 @@
         "poll": true
     },
     "t10": {
-        "name": "World and International News",
+        "name": "Other bbcode",
         "status": "folder_hot_new",
         "views": 5845,
         "replies": 1113,
@@ -82,7 +82,7 @@
         "posts": ["p17", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
     },
     "t11": {
-        "name": "Most Popular News Stories",
+        "name": "BBcode align",
         "status": "folder_new",
         "views": 14,
         "replies": 2,
@@ -90,7 +90,7 @@
         "posts": ["p18", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
     },
     "t12": {
-        "name": "News Main Celebrity News",
+        "name": "Lorem ipsum dolor sit amet",
         "status": "folder_no_new",
         "views": 436,
         "replies": 13,
